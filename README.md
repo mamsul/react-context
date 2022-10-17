@@ -1,7 +1,9 @@
 
 # Mencoba React Context
 
-belajar menggunakan React Context di react js. studi kasus nya menggunakan counter app.
+belajar menggunakan React Context di react js.
+untuk example pertama, hanya basic dari react context nya.
+untuk example kedua, react context pakai use reducer & HOC
 
 ## Authors
 
