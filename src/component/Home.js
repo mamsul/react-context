@@ -1,43 +1,30 @@
-import React, { Component } from 'react';
-import Counter from './Counter.js';
-import { CounterContext } from '../context/CounterContext.js';
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
-class Home extends Component {
-  state = {
-    count: 0,
+const Home = () => {
+  const myStyle = {
+    with: "100%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   };
 
-  dispatch = (action) => {
-    switch (action.type) {
-      case 'ADD_COUNT':
-        this.setState({
-          count: this.state.count + 1,
-        });
-        break;
-      case 'MIN_COUNT':
-        this.setState({
-          count: this.state.count - 1,
-        });
-        break;
-    }
+  const btnStyle = {
+    padding: "10px 30px 10px 30px",
+    cursor: "pointer"
   };
 
-  render() {
-    return (
-      <CounterContext.Provider
-        value={{
-          state: this.state,
-          dispatch: this.dispatch,
-        }}
-      >
-        <div>
-          <h1>MENCOBA CONTEXT</h1>
-          <hr />
-          <Counter add={this.handleAdd} min={this.handleMin} />
-        </div>
-      </CounterContext.Provider>
-    );
-  }
-}
+  return (
+    <div style={myStyle}>
+      <h1>Belajar Context di React</h1>
+
+      <NavLink to={"/example1"}>
+        <button style={btnStyle}>Ikuzo</button>
+      </NavLink>
+    </div>
+  );
+};
 
 export default Home;
